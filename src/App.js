@@ -23,9 +23,14 @@ constructor() {
           <img src={logo} className="App-logo" alt="logo" />
           <p> Hi {this.state.name.FirstName} {this.state.name.LastName}, I work at {this.state.company} </p>
           <button onClick={()=>{
-            this.setState({
-              name: {FirstName:'Fren', LastName:'Guy'}})
-            console.log (this.state);
+            this.setState(()=>{
+              return {
+                name: {FirstName: 'Fren', LastName: 'Guy'},
+              }
+            }, ()=>{
+              console.log (this.state);
+            }
+          );
             }}>Change Name</button>
         </header>
       </div>
