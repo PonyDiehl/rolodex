@@ -11,7 +11,7 @@ constructor() {
 
   this.state = {
     name: 'Bruh'
-  }
+  };
 }
 
 
@@ -21,7 +21,9 @@ constructor() {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p> Hi {this.state.name} </p>
-          <button>Change Name</button>
+          <button onClick={()=>{
+            this.setState({name:'Fren'})
+            }}>Change Name</button>
         </header>
       </div>
     );
