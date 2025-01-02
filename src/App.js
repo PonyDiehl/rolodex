@@ -12,16 +12,20 @@ constructor() {
   this.state = {
     monsters: [
     {
-      name: 'Linda'
+      name: 'Linda',
+      id: '12345',
     },
     {
-      name: 'Frank'
+      name: 'Frank',
+      id: '21345',
     },
     {
-      name: 'Jacky'
+      name: 'Jacky',
+      id: '22345'
     },
     {
-      name: 'Andre'
+      name: 'Andre',
+      id: '23040482'
     },
     ]
   };
@@ -31,11 +35,10 @@ constructor() {
   render () {
     return (
       <div className="App">
-        {
-          this.state.monsters.map((monster)=>{
-            return <h1>{monster.name}</h1>;
-          })
-        }
+        {this.state.monsters.map((monster)=>{
+            return <div key={monster.id}><h1>{monster.name}</h1>
+            </div>;
+          })}
       </div>
     );
   }
