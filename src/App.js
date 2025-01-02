@@ -44,6 +44,7 @@ componentDidMount() {
 
     const {monsters, searchField } = this.state;
     const {onSearchChange} = this;
+    
     const filteredMonsters = monsters.filter((monster) => {
       return monster.name.toLocaleLowerCase().includes(searchField);
     });
