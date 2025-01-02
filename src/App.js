@@ -10,27 +10,22 @@ constructor() {
   super();
 
   this.state = {
-    monsters: [
-    {
-      name: 'Linda',
-      id: '12345',
-    },
-    {
-      name: 'Frank',
-      id: '21345',
-    },
-    {
-      name: 'Jacky',
-      id: '22345'
-    },
-    {
-      name: 'Andre',
-      id: '23040482'
-    },
-    ]
+    monsters: [],
   };
 }
 
+componentDidMount() {
+  fetch('https://jsonplaceholder.typicode.com/users')
+    .then(responce => responce.json())
+    .then((users) => this.setState (() => {
+      return {monsters: users}
+    },
+    () => {
+      console.log(this.state);
+    }
+  ));
+
+}
 
   render () {
     return (
