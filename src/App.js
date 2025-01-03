@@ -1,8 +1,10 @@
 import { Component } from 'react';
 
 import CardList from './components/card-list/card-list.component';
+import SearchBox from './components/search-box/search-box.component';
 import logo from './logo.svg';
 import './App.css';
+
 
 
 
@@ -49,11 +51,10 @@ componentDidMount() {
 
     return (
       <div className="App">
-        <input className='search-box' 
-        type='search' 
-        placeholder='search people' 
-        onChange={onSearchChange}
-        />
+        <SearchBox
+          classname='search-box'
+          onChangeHandler= {onSearchChange} 
+          placeholder='search peeps'/>
         <CardList monsters={filteredMonsters}/>
       </div>
     );
